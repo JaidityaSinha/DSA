@@ -1,12 +1,19 @@
 package BinarySearch.src;
 
-public class FindMinInRotSortedArray {
+public class FindMinInRotSortedArrayII {
     public int findMin(int[] nums) {
         int low = 0, high = nums.length - 1;
         int ans = Integer.MAX_VALUE;
 
         while (low <= high) {
             int mid = low + (high - low) / 2;
+
+            if(nums[mid] == nums[low] && nums[low] == nums[high]) {
+                ans = Math.min(nums[mid], ans);
+                low++;
+                high--;
+                continue;
+            }
 
 
             // Right Sorted
