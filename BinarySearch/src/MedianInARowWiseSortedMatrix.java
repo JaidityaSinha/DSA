@@ -28,8 +28,8 @@ public class MedianInARowWiseSortedMatrix {
     private int blackbox(int[][] mat, int x) {
         int count = 0;
 
-        for (int i = 0; i < mat.length; i++) {
-            count += ub(mat[i], x);
+        for (int[] ints : mat) {
+            count += ub(ints, x);
         }
 
         return count;
